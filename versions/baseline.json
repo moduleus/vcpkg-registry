@@ -7,6 +7,10 @@
     "python3": {
       "baseline": "3.11.8",
       "port-version": 0
+    },
+    "urx": {
+      "baseline": "1.0.1",
+      "port-version": 0
     }
   }
 }
