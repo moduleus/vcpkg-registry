@@ -4,8 +4,6 @@ set(VCPKG_LIBRARY_LINKAGE static)
 
 set(VCPKG_CMAKE_SYSTEM_NAME Linux)
 
-set(VCPKG_FIXUP_ELF_RPATH ON)
-
 if("${PORT}" STREQUAL "python3")
   set(VCPKG_LIBRARY_LINKAGE dynamic)
 endif()
