@@ -5,3 +5,4 @@ set(VCPKG_CXX_FLAGS "/fsanitize=address")
 set(VCPKG_C_FLAGS "/fsanitize=address")
 
 set(VCPKG_ENV_PASSTHROUGH_UNTRACKED VCPKG_TOKEN)
+set(VCPKG_ENV_PASSTHROUGH VCPKG_Python3_EXECUTABLE)

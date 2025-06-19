@@ -8,3 +8,5 @@ set(VCPKG_BUILD_TYPE release)
 set(VCPKG_FIXUP_ELF_RPATH ON)
 
 set(VCPKG_LINKER_FLAGS "-static-libgcc -static-libstdc++")
+
+set(VCPKG_ENV_PASSTHROUGH VCPKG_Python3_EXECUTABLE)

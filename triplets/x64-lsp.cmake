@@ -7,3 +7,5 @@ set(VCPKG_CMAKE_SYSTEM_NAME Linux)
 if("${PORT}" STREQUAL "python3")
   set(VCPKG_LIBRARY_LINKAGE dynamic)
 endif()
+
+set(VCPKG_ENV_PASSTHROUGH VCPKG_Python3_EXECUTABLE)

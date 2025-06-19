@@ -10,3 +10,5 @@ if("${PORT}" STREQUAL "python3")
 endif()
 
 set(VCPKG_LINKER_FLAGS "-static-libgcc -static-libstdc++")
+
+set(VCPKG_ENV_PASSTHROUGH VCPKG_Python3_EXECUTABLE)
