@@ -1,0 +1,28 @@
+diff --git a/config/cmake/hdf5-config.cmake.in b/config/cmake/hdf5-config.cmake.in
+index dde483ed80..33fc316177 100644
+--- a/config/cmake/hdf5-config.cmake.in
++++ b/config/cmake/hdf5-config.cmake.in
+@@ -101,14 +101,23 @@ set (${HDF5_PACKAGE_NAME}_VERSION_MINOR  @HDF5_VERSION_MINOR@)
+ # Don't include targets if this file is being picked up by another
+ # project which has already built hdf5 as a subproject
+ #-----------------------------------------------------------------------------
++include(CMakeFindDependencyMacro)
+ if (NOT TARGET "@HDF5_PACKAGE@")
+   if (${HDF5_PACKAGE_NAME}_ENABLE_Z_LIB_SUPPORT AND ${HDF5_PACKAGE_NAME}_PACKAGE_EXTLIBS)
+     include (@PACKAGE_SHARE_INSTALL_DIR@/@ZLIB_PACKAGE_NAME@@HDF_PACKAGE_EXT@-targets.cmake)
++  elseif (${HDF5_PACKAGE_NAME}_ENABLE_Z_LIB_SUPPORT)
++    find_dependency(ZLIB)
+   endif ()
+   if (${HDF5_PACKAGE_NAME}_ENABLE_SZIP_SUPPORT AND ${HDF5_PACKAGE_NAME}_PACKAGE_EXTLIBS)
+     include (@PACKAGE_SHARE_INSTALL_DIR@/@SZIP_PACKAGE_NAME@@HDF_PACKAGE_EXT@-targets.cmake)
++  elseif (${HDF5_PACKAGE_NAME}_ENABLE_SZIP_SUPPORT)
++    find_dependency(szip)
+   endif ()
+   include (@PACKAGE_SHARE_INSTALL_DIR@/@HDF5_PACKAGE@@HDF_PACKAGE_EXT@-targets.cmake)
++
++  if (${HDF5_PACKAGE_NAME}_ENABLE_THREADSAFE)
++    find_dependency(Threads)
++  endif()
+ endif ()
+ 
+ # Handle default component(static) :
