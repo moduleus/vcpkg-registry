@@ -1,0 +1,14 @@
+set(VCPKG_TARGET_ARCHITECTURE x64)
+set(VCPKG_CRT_LINKAGE dynamic)
+
+if(PORT STREQUAL "urx"
+   OR PORT STREQUAL "uac"
+   OR PORT STREQUAL "zal"
+   OR PORT STREQUAL "python3")
+  set(VCPKG_LIBRARY_LINKAGE dynamic)
+else()
+  set(VCPKG_LIBRARY_LINKAGE static)
+endif()
+
+set(VCPKG_CMAKE_SYSTEM_NAME Linux)
+set(VCPKG_BUILD_TYPE release)
